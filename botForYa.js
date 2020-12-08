@@ -15,13 +15,13 @@ function getRandom(min,max){
 }
 
 let yaInput = document.getElementById("text");//Input для ввода строки поиска
-let btnK = document.getElementsByClassName("button mini-suggest__button button_theme_websearch button_size_ws-head i-bem button_js_inited")[0]; //Кнопка поиска в Yandex
-let words = ["Гобой","Флейта","Как звучит флейта","Балалайка","Фагот","Скрипка","Саксофон"];
-let word = words[getRandom(0,words.length)];
+let btnK = document.getElementsByClassName("button mini-suggest__button button_theme_websearch button_size_ws-head i-bem button_js_inited")[0]; //Кнопка поиска в Yandex, создаем коллекцию по наименов.класса
+let words = ["Гобой","Флейта","Как звучит флейта","Балалайка","Фагот","Скрипка","Саксофон"];//массив значений для поиска
+let word = words[getRandom(0,words.length)];//рандомные значения для списка
 if (btnK!=undefined){ // Проверка существования кнопки поиска yandex
     let i = 0;
-    let timerId = setInterval(function(){
-        yaInput.value = yaInput.value + word[i];
+    let timerId = setInterval(function(){   //задали функцию ввода слова в поисковую строку с задержкой 200мс
+        yaInput.value = yaInput.value + word[i];  //прибавляем очередную букву
         i++;
         if(i == word.length){
             clearInterval(timerId);
