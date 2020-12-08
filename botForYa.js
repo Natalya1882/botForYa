@@ -58,7 +58,7 @@ if (btnK!=undefined){ // Проверка существования кнопк�
         }
     }
     setTimeout(()=>{
-        pageNum=document.querySelector("span.pager_item").innerText;
+        pageNum = Number(document.getElementsByClassName("pager__item pager__item_current_yes pager__item_kind_page")[0].innerText);
         if(!linkIsFound && pageNum<10){
             setTimeout(()=>{
                 document.getElementsByClassName("pager__item_kind_next")[0].click();
